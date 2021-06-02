@@ -54,6 +54,9 @@ class GameOfLifeAnimationParams:
 ## Heavy lifting
 class OneDTwoDGameOfLifeAnimation:
     def __init__(self, gol_params) -> None:
+        """
+        Use the paramter dataclass to instantiate the animator, and play the Game of Life.
+        """
         assert gol_params.validate_output_path(), "Provide valid savepath."
 
         self.rule = gol_params.rule
@@ -138,6 +141,9 @@ class OneDTwoDGameOfLifeAnimation:
 
 
 def create_video(high_quality_bool=False):
+    """
+    Video writer
+    """
     data = GameOfLifeAnimationParams(
         output_path = "./videos/test.mp4",
         rule = 90,
